@@ -26,19 +26,32 @@
         }
 
         .logo {
-            height: 200px; /* Adjust the height as needed */
+            height: 80px; /* Increased logo size */
         }
 
-        .header-content {
+        .carousel {
+            flex: 1;
+            margin-left: 20px;
+            overflow: hidden;
+            position: relative;
+            height: 100px; /* Adjust height as needed */
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white;
             display: flex;
             align-items: center;
-            gap: 20px; /* Space between logo and tagline */
-        }
-
-        .tagline {
-            font-size: 1.2em;
-            font-style: italic;
-            color: white;
+            justify-content: center;
         }
 
         nav {
@@ -140,9 +153,13 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="header-content">
-            <img src="https://github.com/MindfulMusing/bookish-health/blob/main/Green%20Modern%20Medical%20Health%20Care%20Logo.png?raw=true" alt="Mindful Health Logo" class="logo">
-            <p class="tagline">Your Journey to Wellness Starts Here</p>
+        <img src="https://github.com/MindfulMusing/bookish-health/blob/main/Green%20Modern%20Medical%20Health%20Care%20Logo.png?raw=true" alt="Mindful Health Logo" class="logo">
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">Transform Your Life with Mindfulness</div>
+                <div class="carousel-item">Holistic Wellness for Mind, Body, and Soul</div>
+                <div class="carousel-item">Start Your Journey to Better Health Today</div>
+            </div>
         </div>
     </header>
 
@@ -196,5 +213,21 @@
     <footer>
         <p>&copy; 2023 Mindful Health. All rights reserved.</p>
     </footer>
+
+    <!-- Carousel Script -->
+    <script>
+        let currentIndex = 0;
+        const carouselInner = document.querySelector('.carousel-inner');
+        const items = document.querySelectorAll('.carousel-item');
+        const totalItems = items.length;
+
+        function showNextItem() {
+            currentIndex = (currentIndex + 1) % totalItems;
+            const offset = -currentIndex * 100;
+            carouselInner.style.transform = `translateX(${offset}%)`;
+        }
+
+        setInterval(showNextItem, 3000); // Change slide every 3 seconds
+    </script>
 </body>
 </html>
