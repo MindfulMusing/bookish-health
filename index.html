@@ -27,7 +27,7 @@
         }
 
         .logo {
-            height: 80px; /* Adjust logo size */
+            height: 60px; /* Standard logo size */
             width: auto; /* Maintain aspect ratio */
         }
 
@@ -36,7 +36,7 @@
             margin-left: 20px;
             overflow: hidden;
             position: relative;
-            height: 80px; /* Adjust height to match logo */
+            height: 60px; /* Match logo height */
             display: flex;
             align-items: center; /* Vertically center carousel content */
         }
@@ -50,7 +50,7 @@
             min-width: 100%;
             box-sizing: border-box;
             text-align: center;
-            font-size: 1.5em;
+            font-size: 1.2em;
             font-weight: bold;
             color: white;
             display: flex;
@@ -161,11 +161,8 @@
     <header>
         <img src="https://github.com/MindfulMusing/bookish-health/blob/main/mindful%20health%20(2).png?raw=true" alt="Mindful Health Logo" class="logo">
         <div class="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item">"The greatest wealth is health." – Virgil</div>
-                <div class="carousel-item">"Mindfulness is the path to a balanced life."</div>
-                <div class="carousel-item">"Take care of your body; it's the only place you have to live." – Jim Rohn</div>
-                <div class="carousel-item">"Wellness is the complete integration of body, mind, and spirit."</div>
+            <div class="carousel-inner" id="carousel-inner">
+                <!-- Quotes will be dynamically inserted here -->
             </div>
         </div>
     </header>
@@ -223,18 +220,56 @@
 
     <!-- Carousel Script -->
     <script>
-        let currentIndex = 0;
-        const carouselInner = document.querySelector('.carousel-inner');
-        const items = document.querySelectorAll('.carousel-item');
-        const totalItems = items.length;
+        // Predefined quotes (fallback if API fails)
+        const predefinedQuotes = [
+            "The greatest wealth is health. – Virgil",
+            "Mindfulness is the path to a balanced life.",
+            "Take care of your body; it's the only place you have to live. – Jim Rohn",
+            "Wellness is the complete integration of body, mind, and spirit.",
+            "Health is a state of complete harmony of the body, mind, and spirit. – B.K.S. Iyengar"
+        ];
 
-        function showNextItem() {
-            currentIndex = (currentIndex + 1) % totalItems;
-            const offset = -currentIndex * 100;
-            carouselInner.style.transform = `translateX(${offset}%)`;
+        // Fetch quotes from a free API
+        async function fetchQuotes() {
+            try {
+                const response = await fetch('https://type.fit/api/quotes');
+                const data = await response.json();
+                const healthQuotes = data.filter(quote => quote.text.toLowerCase().includes('health') || quote.text.toLowerCase().includes('wellness'));
+                return healthQuotes.slice(0, 5).map(quote => quote.text); // Use top 5 health-related quotes
+            } catch (error) {
+                console.error('Failed to fetch quotes:', error);
+                return predefinedQuotes; // Fallback to predefined quotes
+            }
         }
 
-        setInterval(showNextItem, 3000); // Change slide every 3 seconds
+        // Initialize carousel
+        async function initCarousel() {
+            const carouselInner = document.getElementById('carousel-inner');
+            const quotes = await fetchQuotes();
+
+            // Add quotes to carousel
+            quotes.forEach(quote => {
+                const quoteElement = document.createElement('div');
+                quoteElement.className = 'carousel-item';
+                quoteElement.textContent = quote;
+                carouselInner.appendChild(quoteElement);
+            });
+
+            // Start carousel animation
+            let currentIndex = 0;
+            const totalItems = quotes.length;
+
+            function showNextItem() {
+                currentIndex = (currentIndex + 1) % totalItems;
+                const offset = -currentIndex * 100;
+                carouselInner.style.transform = `translateX(${offset}%)`;
+            }
+
+            setInterval(showNextItem, 3000); // Change slide every 3 seconds
+        }
+
+        // Initialize the carousel on page load
+        initCarousel();
     </script>
 </body>
 </html>
