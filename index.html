@@ -149,10 +149,20 @@
             background: #333;
             color: white;
             margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px; /* Space between logo and text */
+        }
+
+        .footer-logo {
+            height: 40px; /* Smaller logo size for footer */
+            width: auto; /* Maintain aspect ratio */
         }
 
         footer p {
             margin: 0;
+            font-size: 0.9em;
         }
     </style>
 </head>
@@ -215,6 +225,7 @@
 
     <!-- Footer -->
     <footer>
+        <img src="https://github.com/MindfulMusing/bookish-health/blob/main/mindful%20health%20(2).png?raw=true" alt="Mindful Health Logo" class="footer-logo">
         <p>&copy; 2023 Mindful Health. All rights reserved.</p>
     </footer>
 
