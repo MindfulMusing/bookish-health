@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindful Health - Contact</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Header and Navigation */
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        }
+
+        .logo {
+            height: 60px; /* Standard logo size */
+            width: auto; /* Maintain aspect ratio */
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 10px 0;
+            width: 100%; /* Ensure nav takes full width */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h2, .contact-form h2 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .contact-form button:hover {
+            background: #45a049;
+        }
+
+        /* Map Section */
+        .map {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            border-radius: 5px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: white;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px; /* Space between logo and text */
+        }
+
+        .footer-logo {
+            height: 40px; /* Smaller logo size for footer */
+            width: auto; /* Maintain aspect ratio */
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="https://github.com/MindfulMusing/bookish-health/blob/main/mindful%20health%20(2).png?raw=true" alt="Mindful Health Logo" class="logo">
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="https://github.com/MindfulMusing/bookish-health">Home</a>
+        <a href="https://mindfulmusing.github.io/bookish-health/about.html">About</a>
+        <a href="https://mindfulmusing.github.io/bookish-health/services.html">Services</a>
+        <a href="#">Contact</a>
+        <a href="https://mindfulmusing.github.io/bookish-health/Privacy%20Policy.html">Privacy Policy</a>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-container">
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p><strong>Address:</strong> 123 Wellness Lane, Mindful City, MC 12345</p>
+            <p><strong>Phone:</strong> (123) 456-7890</p>
+            <p><strong>Email:</strong> info@pharmacarenet.com</p>
+            <p><strong>Business Hours:</strong> Mon - Fri: 9 AM - 6 PM, Sat: 10 AM - 4 PM, Sun: Closed</p>
+        </div>
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093747!2d144.9537353153166!3d-37.816279742021665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d8a32a9e4f1!2s123%20Wellness%20Ln%2C%20Mindful%20City%2C%20MC%2012345!5e0!3m2!1sen!2sus!4v1622549400000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <img src="https://github.com/MindfulMusing/bookish-health/blob/main/mindful%20health%20(2).png?raw=true" alt="Mindful Health Logo" class="footer-logo">
+        <p>&copy; 2023 Mindful Health. All rights reserved.</p>
+        <p><a href="https://mindfulmusing.github.io/bookish-health/sitemap.xml">Sitemap</a></p>
+    </footer>
+</body>
+</html>
