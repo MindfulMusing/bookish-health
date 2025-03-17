@@ -23,10 +23,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
         }
 
         .logo {
-            height: 80px; /* Increased logo size */
+            height: 80px; /* Adjust logo size */
+            width: auto; /* Maintain aspect ratio */
         }
 
         .carousel {
@@ -34,7 +36,9 @@
             margin-left: 20px;
             overflow: hidden;
             position: relative;
-            height: 100px; /* Adjust height as needed */
+            height: 80px; /* Adjust height to match logo */
+            display: flex;
+            align-items: center; /* Vertically center carousel content */
         }
 
         .carousel-inner {
@@ -52,6 +56,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 0 20px; /* Add padding for better spacing */
         }
 
         nav {
@@ -59,6 +64,7 @@
             justify-content: center;
             background: #333;
             padding: 10px 0;
+            width: 100%; /* Ensure nav takes full width */
         }
 
         nav a {
@@ -156,9 +162,10 @@
         <img src="https://github.com/MindfulMusing/bookish-health/blob/main/mindful%20health%20(2).png?raw=true" alt="Mindful Health Logo" class="logo">
         <div class="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item">Transform Your Life with Mindfulness</div>
-                <div class="carousel-item">Holistic Wellness for Mind, Body, and Soul</div>
-                <div class="carousel-item">Start Your Journey to Better Health Today</div>
+                <div class="carousel-item">"The greatest wealth is health." – Virgil</div>
+                <div class="carousel-item">"Mindfulness is the path to a balanced life."</div>
+                <div class="carousel-item">"Take care of your body; it's the only place you have to live." – Jim Rohn</div>
+                <div class="carousel-item">"Wellness is the complete integration of body, mind, and spirit."</div>
             </div>
         </div>
     </header>
